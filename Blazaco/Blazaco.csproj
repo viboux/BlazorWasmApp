@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+	  <OutputType>Library</OutputType>
+    <IsPackable>true</IsPackable>
+    <BlazorLinkOnBuild>false</BlazorLinkOnBuild>
+    <LangVersion>7.3</LangVersion>
+    <RazorLangVersion>3.0</RazorLangVersion>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+    <TypeScriptToolsVersion>3.2</TypeScriptToolsVersion>
+    <Authors>Kyle Undefined</Authors>
+    <Description>A Blazor Component utilizing the Monaco editor by Microsoft</Description>
+    <RepositoryType>git</RepositoryType>
+    <Copyright>Copyright 2019 (c) Kyle Undefined. All rights reserved.</Copyright>
+    <RepositoryUrl>https://github.com/Kyle-Undefined/Blazaco</RepositoryUrl>
+    <PackageLicenseUrl>https://github.com/Kyle-Undefined/Blazaco/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://kyle-undefined.github.io/Blazaco/</PackageProjectUrl>
+	<PackageTags>Blazor;Blazor-Components;Monaco</PackageTags>
+	<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+	<PackageReleaseNotes>See the change log for release notes
+
+https://github.com/Kyle-Undefined/Blazaco/blob/master/CHANGELOG.md</PackageReleaseNotes>
+	<Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="content\**\*.js" LogicalName="blazor:js:%(RecursiveDir)%(Filename)%(Extension)" />
+    <EmbeddedResource Include="content\**\*.css" LogicalName="blazor:css:%(RecursiveDir)%(Filename)%(Extension)" />
+    <EmbeddedResource Include="content\**" Exclude="**\*.js;**\*.css" LogicalName="blazor:file:%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="3.1.2" />
+  </ItemGroup>
+
+</Project>

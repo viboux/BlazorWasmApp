@@ -1,0 +1,34 @@
+﻿@page "/pagemonaco"
+
+@using Blazaco
+@using Blazaco.Editor
+@using Blazaco.Editor.Options
+
+<h3>Page avec démo Monaco</h3>
+
+<MonacoEditor @ref="_editor" Model="@_editorModel"  />
+
+@code {
+    private EditorModel _editorModel { get; set; }
+    private MonacoEditor _editor;
+
+    //protected override void OnInitialized()
+    //{
+    //    base.OnInitialized();
+
+    //    _editorModel = new EditorModel(); // Uses defaults
+
+    //    // or
+
+    //    //var options = new EditorOptions()
+    //    //{
+    //    //    Value = "// Your Code Here!",
+    //    //    Language = "csharp",
+    //    //    Theme = "vs-dark"
+    //    //};
+
+    //    //_editorModel = new EditorModel(options);
+
+    //}
+
+}
